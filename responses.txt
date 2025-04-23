@@ -1,0 +1,17 @@
+hi = Hello! How can I assist you today?
+hello = Hi there! What can I help you with?
+how are you = I'm just a program, but I'm running smoothly!
+what is your name = I'm your friendly Java chatbot.
+bye = Goodbye! Have a great day!
+thank you = You're welcome!
+thanks = Happy to help!
+who created you = I was created by a Java programmer like you.
+what is java = Java is a popular programming language used for building various types of applications.
+tell me a joke = Why do programmers prefer dark mode? Because light attracts bugs!
+what can you do = I can answer simple questions if they're in my memory file.
+good morning = Good morning to you too!
+good night = Sleep well! See you next time.
+help = I'm here to assist you. Ask me something!
+what is ai = AI stands for Artificial Intelligence, the simulation of human intelligence by machines.
+you are stupid = I'm still learning, but I appreciate the feedback.
+are you real = I'm as real as code can be.
