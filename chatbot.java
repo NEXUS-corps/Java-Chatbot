@@ -37,7 +37,6 @@ public class chatbot {
         return failureResponse[n];
     }
 
-
     public static void timeBasedGreeting() {
         LocalTime currentTime = LocalTime.now();
         int hour = currentTime.getHour();
@@ -49,18 +48,26 @@ public class chatbot {
             System.out.println("Good Evening");
         }
     }
-    public  static String getcurrentTime(){
-        DateTimeFormatter timeFormatter= DateTimeFormatter.ofPattern("HH:mm:ss a");
+
+    public static String getcurrentTime() {
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss a");
         return LocalTime.now().format(timeFormatter).toString();
     }
+
     public static String getCurrentDate() {
-        DateTimeFormatter dateFormatter= DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return LocalDate.now().format(dateFormatter).toString();
     }
-    public static void getCurrentDay(){
-        LocalDate currentDate=LocalDate.now();
-        DayOfWeek dayOfWeek=currentDate.getDayOfWeek();
+
+    public static void getCurrentDay() {
+        LocalDate currentDate = LocalDate.now();
+        DayOfWeek dayOfWeek = currentDate.getDayOfWeek();
         System.out.println(dayOfWeek);
+    }
+
+    public static String inputtrim(String abc) {
+        String clean = abc.replaceAll("[,\\s\\?\\.]", "");
+        return clean;
     }
 
     public static void main(String[] args) {
@@ -72,23 +79,24 @@ public class chatbot {
         while (true) {
             System.out.print("You: ");
             input = scanner.nextLine().toLowerCase();
+            input=inputtrim(input);
             if (input.equals("bye")) {
                 System.out.println("Chatbot: " + responses.get("bye"));
                 break;
             } else if (responses.containsKey(input)) {
                 System.out.println("chatbot: " + responses.get(input));
-            } else if(input.equals("time")){ 
-                System.out.println("Chatbot: current time is "+getcurrentTime());
+            } else if (input.equals("time")) {
+                System.out.println("Chatbot: current time is " + getcurrentTime());
             } else if (input.equals("date")) {
-                System.out.println("Chatbot: Today's date is: "+getCurrentDate());
-            } else if(input.equals("dayofweek")){
+                System.out.println("Chatbot: Today's date is: " + getCurrentDate());
+            } else if (input.equals("dayofweek")) {
                 System.out.print("Chatbot: Today is ");
                 getCurrentDay();
-            }else {
+            } else {
                 System.out.println("Chatbot: " + defaultresponse());
             }
         }
         scanner.close();
     }
-    
+
 }
